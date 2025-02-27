@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>4estbox</title>
+  <style>
+    /* Container that holds the four sections */
+    .container {
+      display: flex;
+      flex-wrap: nowrap; /* Ensures all sections stay in one row */
+      height: 100vh; /* Full viewport height */
+    }
+
+    /* Each section takes up 25% of the container width */
+    .section {
+      flex: 1 1 25%;
+      box-sizing: border-box;
+      padding: 10px;
+      border: 1px solid #ccc;
+      text-align: center;
+      height: 100%; /* Make section fill full height */
+      overflow-y: auto; /* Enable independent scrolling */
+    }
+
+    /* Ensure the embedded video is responsive */
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-top: 177.77%; /* 9:16 Aspect Ratio */
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Grid container for buttons */
+    .button-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* 2 columns */
+      grid-template-rows: repeat(3, 1fr); /* 3 rows */
+      gap: 5px;
+      margin-top: 10px;
+    }
+
+    /* Button styling */
+    .button-grid button, .back-button {
+      padding: 10px;
+      font-size: 14px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    /* Button hover effect */
+    .button-grid button:hover, .back-button:hover {
+      background-color: #0056b3;
+    }
+
+    /* Image container styling */
+    .image-container {
+      width: 100%; /* Ensure it takes the full width of the section */
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* Centers the image */
+      margin-top: 10px;
+    }
+
+    /* Image styling */
+    .image-container img {
+      max-width: 90%; /* Prevents the image from being too wide */
+      max-height: 50vh; /* Limits the image height */
+      object-fit: contain; /* Ensures the whole image is visible */
+      border: 1px solid #ccc; /* Optional: Adds a border */
+      border-radius: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <!-- Section 1 -->
+    <div class="section">
+    <h2>4EstBox</h2>
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/videoseries?si=JPheU2VsprmFBVNy&amp;list=PLtRCz9br2wX8oB03UBz_K2BBUDMROUAvi" frameborder="0"></iframe>
+      </div>
+      <p>Interact with 4estbox</p>
+
+      <!-- Image Container (Initially Hidden) -->
+      <div class="image-container" id="image-container-1" display="none">
+        <img id="image-1" src="" alt="Displayed Image">
+        <button class="back-button" onclick="showButtons(1)">Back</button>
+      </div>
+
+      <!-- Button Grid -->
+      <div class="button-grid" id="buttons-1">
+        <button onclick="showImage(1, 'eva.jpg')">EVA</button>
+        <button onclick="showImage(1, 'map.jpg')">Map</button>
+        <button onclick="showImage(1, 'donate.png')">Donate</button>
+        <button onclick="showImage(1, 'services.jpg')">Services</button>
+        <button onclick="showImage(1, 'games.jpg')">Games</button>
+        <button onclick="showImage(1, 'app.jpg')">App</button>
+      </div>
+    </div>
+
+    <!-- Section 2 -->
+    <div class="section">
+    <h2>4EstBox</h2>
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/videoseries?si=JPheU2VsprmFBVNy&amp;list=PLtRCz9br2wX8oB03UBz_K2BBUDMROUAvi" frameborder="0"></iframe>
+      </div>
+      <p>Interact with 4estbox</p>
+
+      <!-- Image Container (Initially Hidden) -->
+      <div class="image-container" id="image-container-2" display="none">
+        <img id="image-2" src="" alt="Displayed Image">
+        <button class="back-button" onclick="showButtons(2)">Back</button>
+      </div>
+
+      <!-- Button Grid -->
+      <div class="button-grid" id="buttons-2">
+        <button onclick="showImage(2, 'eva.jpg')">EVA</button>
+        <button onclick="showImage(2, 'map.jpg')">Map</button>
+        <button onclick="showImage(2, 'donate.png')">Donate</button>
+        <button onclick="showImage(2, 'services.jpg')">Services</button>
+        <button onclick="showImage(2, 'games.jpg')">Games</button>
+        <button onclick="showImage(2, 'app.jpg')">App</button>
+      </div>
+    </div>
+
+    <!-- Section 3 -->
+    <div class="section">
+    <h2>4EstBox</h2>
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/videoseries?si=JPheU2VsprmFBVNy&amp;list=PLtRCz9br2wX8oB03UBz_K2BBUDMROUAvi" frameborder="0"></iframe>
+      </div>
+      <p>Interact with 4estbox</p>
+
+      <!-- Image Container (Initially Hidden) -->
+      <div class="image-container" id="image-container-3" display="none">
+        <img id="image-3" src="" alt="Displayed Image">
+        <button class="back-button" onclick="showButtons(3)">Back</button>
+      </div>
+
+      <!-- Button Grid -->
+      <div class="button-grid" id="buttons-3">
+        <button onclick="showImage(3, 'eva.jpg')">EVA</button>
+        <button onclick="showImage(3, 'map.jpg')">Map</button>
+        <button onclick="showImage(3, 'donate.png')">Donate</button>
+        <button onclick="showImage(3, 'services.jpg')">Services</button>
+        <button onclick="showImage(3, 'games.jpg')">Games</button>
+        <button onclick="showImage(3, 'app.jpg')">App</button>
+      </div>
+    </div>
+
+    <!-- Section 4 -->
+    <div class="section">
+    <h2>4EstBox</h2>
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/videoseries?si=JPheU2VsprmFBVNy&amp;list=PLtRCz9br2wX8oB03UBz_K2BBUDMROUAvi" frameborder="0"></iframe>
+      </div>
+      <p>Interact with 4estbox</p>
+      
+      <!-- Image Container (Initially Hidden) -->
+      <div class="image-container" id="image-container-4" display="none">
+        <img id="image-4" src="" alt="Displayed Image">
+        <button class="back-button" onclick="showButtons(4)">Back</button>
+      </div>
+
+      <!-- Button Grid -->
+      <div class="button-grid" id="buttons-4">
+        <button onclick="showImage(4, 'eva.jpg')">EVA</button>
+        <button onclick="showImage(4, 'map.jpg')">Map</button>
+        <button onclick="showImage(4, 'donate.png')">Donate</button>
+        <button onclick="showImage(4, 'services.jpg')">Services</button>
+        <button onclick="showImage(4, 'games.jpg')">Games</button>
+        <button onclick="showImage(4, 'app.jpg')">App</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function showImage(section, imgSrc) {
+      document.getElementById(`buttons-${section}`).style.display = 'none'; // Hide button grid
+      document.getElementById(`image-${section}`).src = imgSrc; // Set image source
+      document.getElementById(`image-container-${section}`).style.display = 'block'; // Show image container
+    }
+
+    function showButtons(section) {
+      document.getElementById(`buttons-${section}`).style.display = 'grid'; // Show button grid
+      document.getElementById(`image-container-${section}`).style.display = 'none'; // Hide image container
+    }
+  </script>
+</body>
+</html>
+
